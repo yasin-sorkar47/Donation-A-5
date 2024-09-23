@@ -138,8 +138,3 @@ function handleDonationClick() {
   let cardSection = document.getElementById("cardSection");
   cardSection.classList.remove("hidden");
 }
-
-// switch to other page
-function handleSwitch() {
-  window.location.href = "../question.html";
-}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question</title>
+
+    <!--Link: google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Link: daisyUI and tailwind css  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "rgb(180, 244, 97)",
+              fontColor: "rgb(17, 17, 17)",
+              navBg: "rgb(249, 247, 243)",
+            },
+            fontFamily: {
+              lexend: ["Lexend", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <header>
+      <!-- navbar start  -->
+      <div class="bg-navBg p-4 xl:p-0">
+        <div class="container mx-auto pt-5 pb-16">
+          <div class="flex items-center justify-between">
+            <div>
+              <!-- blog button here -->
+              <button
+                onclick="handleSwitchToBlog()"
+                class="px-4 py-2 lg:px-8 lg:py-4 bg-primary rounded-md text-xl font-semibold active:translate-y-1 text-fontColor"
+              >
+                Home
+              </button>
+            </div>
+            <div>
+              <div class="flex items-center space-x-3">
+                <img src="./assets/logo.png" alt="image" />
+                <p class="text-[22px] hidden md:block font-bold text-fontColor">
+                  Donate Bangladesh
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center space-x-3">
+                <img src="./assets/coin.png" alt="coinImage" />
+                <p
+                  id="totalAmount"
+                  class="text-base lg:text-xl font-semibold text-gray-400"
+                >
+                  5500 BDT
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- nav bar end  -->
+    </header>
+    <main class="container mx-auto">
+      <h1 class="text-3xl md:text-5xl p-4 font-bold flex items-center mt-9">
+        Important FAQ
+        <svg
+          class="w-10 ml-2 animate-bounce"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+        >
+          <path
+            d="M80 160c0-35.3 28.7-64 64-64l32 0c35.3 0 64 28.7 64 64l0 3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74l0 1.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7l0-3.6c0-70.7-57.3-128-128-128l-32 0C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+          />
+        </svg>
+      </h1>
+
+      <!-- accordion start  -->
+      <div class="join join-vertical w-full mt-10">
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-xl font-medium">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p>
+              What is the Document Object Model (DOM) is interface of web pages.
+              that represent the structure of document as a tree of object. it
+              allows developers modify the HTML and manipulate the HTML
+              Elements, attributes, and styles using javaScript. the DOM allows
+              to handle the event like clicks or key presses etc.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>I can select an element from DOM Five ways.</p>
+            <ul>
+              <li>1. getElementById</li>
+              <li>2. getElementsByClassName</li>
+              <li>3. getElementsByTagName</li>
+              <li>4. querySelector</li>
+              <li>5. querySelectorAll</li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            What is event delegation in the context of the DOM. and why is it
+            useful?
+          </div>
+          <div class="collapse-content">
+            <p>
+              Event delegation is a technique where i can set event parent
+              element and it handle the child element. and it dos not make event
+              bubbling. allow the parent to handle events from all children.
+            </p>
+            <p>Benefits</p>
+            <ul>
+              <li>1. Improved performance.</li>
+              <li>2. Handles dynamic content.</li>
+              <li>3. Simpler code.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            How do you manipulate an element's attributes and styles using the
+            dom?
+          </div>
+          <div class="collapse-content">
+            <p>
+              i can manipulate an element's attributes and styles in the DOM
+              using javaScript. here it how can do it
+            </p>
+            <p>i can get, set or remove attributes using this</p>
+            <ul>
+              <li>i can get by using: getAttribute()</li>
+              <li>i can set by using: setAttribute()</li>
+              <li>i can remove by using: removeAttribute()</li>
+            </ul>
+            <p>
+              also i can manipulate styles. and i can access the element's
+              styles by using style property
+            </p>
+            <ul>
+              <li>i can get styles</li>
+              <li>i can set styles</li>
+              <li>i can remove styles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- accordion end -->
+    </main>
+
+    <script src="./js/question.js"></script>
+  </body>
+</html>

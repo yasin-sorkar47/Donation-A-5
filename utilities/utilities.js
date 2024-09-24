@@ -18,16 +18,16 @@ function finalFunc(
 
   //   history related code
   let historySection = document.getElementById("historySection");
-
-  let rows = `<div class="p-8 border border-gray-300 rounded-md mb-4">
-                      <h4 class="text-xl font-bold mb-4">
+  let div = document.createElement("div");
+  div.classList.add("p-8", "border", "border-gray-300", "rounded-md", "mb-4");
+  div.innerHTML = ` <h4 class="text-xl font-bold mb-4">
                         ${inputValue} Taka is ${title}
                       </h4>
                       <p class="text-base font-light text-gray-500">
                         Date : ${new Date().toLocaleDateString()}  Time: ${new Date().toLocaleTimeString()}
-                      </p>
-                    </div>`;
-  historySection.innerHTML += rows;
+                      </p>`;
+
+  historySection.insertBefore(div, historySection.firstChild);
 
   //   show the modal
   let modal = document.getElementById("modal");
